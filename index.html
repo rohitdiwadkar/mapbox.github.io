@@ -17,6 +17,42 @@
         a, a:hover, a:visited {
             color: #0071bc;
         }
+        #intro-modal {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                background: rgb(255,255,255,.75);
+                z-index: 10000;
+                font-size: 1em;
+                line-height: 1.5em;
+                color: whitesmoke;
+            }
+
+            #intro-modal #close {
+                width:                  120px;
+                height:                 40px;
+                background:           #FFFFFF;
+                font-size:              1em;
+                font-weight:            700;
+                cursor:                 pointer;        
+            }
+
+            #modal {
+                top: 200px;
+                margin: auto;
+                width: 400px;
+                background: #155068;
+                position: relative;
+                opacity: 0.9;
+                border-radius: 10px;
+                padding: 20px;
+            }
+         #buttons {
+                display:                none;
+                position:               relative;
+                top:                    275px;
+                width:                  100%;
+            }   
         #map {
             top:0; 
             height: 100vh;
@@ -92,7 +128,19 @@
         </style>
 </head>
 <body>
-
+<div id="intro-modal">
+            <div id="modal">
+                <div id="content">
+                    This is an interactive map.  Scroll down through the city
+                    cards to the right side of the map and the map will fly
+                    to the city's location.
+                </div>
+                <div style="text-align: center; padding-top: 10px;">
+                    <button id="close" onclick="document.getElementById('intro-modal').style.display='none'" >Let's Go!</div>
+                </div>
+                
+            </div>
+        </div>
 <div id="map"></div>
 <div id="story"></div>
 <script src="./config.js"></script>
